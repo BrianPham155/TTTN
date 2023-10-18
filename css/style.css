@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: url('IMG/background.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  /* background-color: red; */
+}
+
+.logo {
+  font-size: 50px;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: aliceblue;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: aliceblue;
+  transition: .3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+
+.middle {
+  margin: auto;
+  width: 900px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: aliceblue;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+.wrapper {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, .2);
+}
+.wrapper .text-input{
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, .2);
+}
+.text-input .to-text{
+  border-radius: 0px;
+  border-left: 2px solid rgba(255, 255, 255, .2);
+}
+::placeholder{
+  color: aliceblue;
+}
+.text-input textarea{
+  height: 250px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 18px;
+  border-radius: 10px;
+  background:none;
+  padding: 10px 15px;
+  color: aliceblue;
+}
+.controls, li, .icon, .icon i{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls{
+  list-style: none;
+  padding: 12px 15px;
+}
+.controls .row.from .icon{
+  border-right: 2px solid rgba(255, 255, 255, .2);
+  padding-right: 15px;
+}
+.controls .row.to .icon{
+  border-left: 2px solid rgba(255, 255, 255, .2);
+  padding-left: 15px;
+}
+.controls .icon{
+  width:38%;
+}
+.controls .icon i{
+  width: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  justify-content: c;
+}
+.controls .row select{
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: none;
+  color: aliceblue
+}
+select option{
+  color: black;
+}
+.controls .exchange{
+  color: aliceblue;
+  font-size: 16px;
+  cursor: pointer;
+}
+.middle button{
+  width: 100%;
+  height: 45px;
+  background: aliceblue;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #111;
+  font-weight: 600;
+}
+footer {
+  position: absolute;
+  bottom: -300px;
+  background-color: aliceblue;
+  height: 300px;
+  width: 100%;
+  z-index: 99;
+}
+
+.social-footer {
+  margin: 60px 0px 0px 80px;
+}
+
+.social-footer h3 {
+
+  color: #111;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.social-footer p {
+  color: #111;
+  padding-bottom: 10px;
+  text-align: justify;
+}
+
+.social-footer i {
+  color: #111;
+}
+
+footer a {
+  position: relative;
+  height: fit-content;
+  margin: 10px 20px 0 0;
+  font-size: 30px;
+  color: #111;
+  font-weight: 500;
+  text-decoration: none;
+  justify-content: center;
+}
+
+footer a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #111;
+  transition: .3s;
+}
+
+footer a:hover::before {
+  width: 100%;
+}
