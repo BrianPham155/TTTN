@@ -57,19 +57,24 @@ function validateForm() {
         };
 
         // Send POST request using Axios
-        axios.post('/register', data)
+        axios.post('http://localhost:3000/register', data)
             .then(response => {
                 console.log(response.data);
                 // Clear form input values
                 form.reset();
                 // Redirect to login page
-                window.location.href = '/login';
+                window.location.href = '/public/login.html';
             })
             .catch(error => {
                 console.error(error);
-                // Display a user-friendly error message
-                alert('Something went wrong. Please try again later.');
-            });
+                if (error.response.status === 400 && error.response.data.error === 'Email already exists') {
+                  // Hiển thị thông báo lỗi bằng alert nếu email đã tồn tại
+                  alert('Email already exists. Please use a different email address.');
+                } else {
+                  // Hiển thị thông báo lỗi mặc định nếu có lỗi khác xảy ra
+                  alert('Something went wrong. Please try again later.');
+                }
+              });
     }
 }
 

@@ -62,13 +62,24 @@ app.get('/register', (req, res) => {
 
 
 app.post('/register', async (req, res) => {
+    const { username, email, password } = req.body;
+  
     try {
-        const hashPassword = await bcrypt.hash(req.body.password, 10);
-        const newUser = new User({
-            name: req.body.username,
-            email: req.body.email,
-            password: hashPassword,
-        });
+      // Kiểm tra xem email đã tồn tại trong cơ sở dữ liệu chưa
+      const existingUser = await User.findOne({ email: email });
+      if (existingUser) {
+        return res.status(400).json({ error: 'Email already exists' });
+      }
+  
+      // Hash mật khẩu
+      const hashPassword = await bcrypt.hash(password.password, 10);
+  
+      // Tạo người dùng mới
+      const newUser = new User({
+        name: username.username,
+        email: email.email,
+        password: hashPassword
+      });
         const savedUser = await newUser.save();
         res.redirect('/login')
     } catch (error) {
