@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require ("bcrypt");
 const validator = require("validator")
 const cors = require('cors');
-
+const axios = require('axios')
 // Set up your MongoDB connection
 mongoose.connect("mongodb+srv://2051120151:Sdt0779394717@cluster.gcvron7.mongodb.net/Login", {
     useNewUrlParser: true,
@@ -70,7 +70,7 @@ app.post('/register', async (req, res) => {
             password: hashPassword,
         });
         const savedUser = await newUser.save();
-        res.status(201).json(savedUser); // Send a JSON response to the client with 201 Created status
+        res.redirect('/login')
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Internal Server Error" }); // Send an error response to the client with 500 Internal Server Error status
