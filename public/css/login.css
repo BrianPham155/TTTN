@@ -70,7 +70,6 @@ body {
 
 .form {
   margin: auto;
-  display: block;
   width: 420px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
@@ -151,7 +150,6 @@ body {
 
 .form-Register {
   margin: auto;
-  display: none;
   width: 420px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
@@ -197,6 +195,13 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
+  visibility: hidden;
+}
+.input-box.success input{
+  border-color: green;
+}
+.input-box.error input{
+  border-color: red;
 }
 
 .form-Register .btn {
@@ -228,6 +233,24 @@ body {
 .register-link p a:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.input-box.error small{
+  visibility: visible;
+}
+.input-box small {
+  color:red;
+  position: absolute;
+  display: flex;
+  visibility: hidden;
+}
+.input-box.success i.fa-check{
+  color: green;
+  visibility: visible;
+}
+.input-box.error i.fa-exclamation{
+  color: red;
+  visibility: visible;
 }
 
 footer {
